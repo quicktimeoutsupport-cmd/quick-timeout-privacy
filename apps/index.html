@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bonney Apps의 Android 앱 App Break와 Link Now를 만나보세요.">
+  <meta name="description" content="Bonney Apps의 Android 앱 App Break·Link Now와 iPhone·iPad용 Quick Timeout을 만나보세요.">
   <meta name="theme-color" content="#171126">
   <title>Bonney Apps</title>
   <style>
@@ -80,6 +80,7 @@
     }
 
     .break { background: linear-gradient(145deg, #aa7dff, #6d54c7); }
+    .timeout { background: linear-gradient(145deg, #ff963d, #ff620d); }
     .link { background: linear-gradient(145deg, #50c8ff, #4f6ce8); }
 
     h2 { margin: 0; font-size: 18px; }
@@ -118,7 +119,8 @@
     <header>
       <div class="mark" aria-hidden="true">B</div>
       <h1>Bonney Apps</h1>
-      <p>일상을 조금 더 편리하게 만드는<br>작고 실용적인 Android 앱</p>
+      <button id="language" type="button" style="margin-top:10px;border:1px solid #888;border-radius:9px;background:transparent;color:white;padding:7px 14px">English</button>
+      <p>일상을 조금 더 편리하게 만드는<br>작고 실용적인 Android · iOS 앱</p>
     </header>
 
     <section class="apps" aria-label="앱 목록">
@@ -127,7 +129,7 @@
           <div class="app-icon break" aria-hidden="true">AB</div>
           <div>
             <h2>App Break</h2>
-            <p class="tag">앱 사용 시간을 의식적으로 멈추는 습관</p>
+            <p class="tag">Android · 앱 사용 시간을 의식적으로 멈추는 습관</p>
           </div>
         </div>
         <p class="copy">선택한 앱의 하루 사용 시간을 확인하고, 정한 시간이 되면 잠시 멈출 수 있도록 도와줍니다.</p>
@@ -139,20 +141,58 @@
           <div class="app-icon link" aria-hidden="true">LN</div>
           <div>
             <h2>Link Now</h2>
-            <p class="tag">자주 쓰는 Bluetooth 오디오를 더 간편하게</p>
+            <p class="tag">Android · 자주 쓰는 Bluetooth 오디오를 더 간편하게</p>
           </div>
         </div>
         <p class="copy">이미 페어링된 이어폰, 차량 오디오와 스피커를 프로필로 정리하고 연결 상태를 한눈에 확인하세요.</p>
         <a class="install" href="https://play.google.com/store/apps/details?id=com.developerbonney.linknow&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dprofile%26utm_campaign%3Dbonney_apps_hub%26utm_content%3Dlink_now">Link Now 지금 설치</a>
       </article>
+      <article>
+        <div class="app-head">
+          <div class="app-icon timeout" aria-hidden="true">QT</div>
+          <div>
+            <h2>Quick Timeout</h2>
+            <p class="tag">iPhone · iPad — 필요한 동안 화면 유지</p>
+          </div>
+        </div>
+        <p class="copy">레시피를 보거나 책상에서 참고할 때, 원하는 시간만큼 화면을 켜 두세요. 작은 상태 창을 유지하는 동안 사용할 수 있습니다.</p>
+        <a class="install" href="https://apps.apple.com/kr/app/id6809292356">App Store에서 무료 다운로드</a>
+      </article>
     </section>
 
     <footer>
-      Google Play에서 무료로 다운로드할 수 있습니다. 앱에는 광고가 포함될 수 있습니다.<br>
+      Google Play · App Store에서 무료로 다운로드할 수 있습니다. 앱에는 광고가 포함될 수 있습니다.<br>
       <a href="https://quicktimeoutsupport-cmd.github.io/app-break-privacy/privacy-policy.html">App Break 개인정보처리방침</a>
       ·
       <a href="https://quicktimeoutsupport-cmd.github.io/linknow-privacy/privacy-policy.html">Link Now 개인정보처리방침</a>
+      ·
+      <a href="https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/privacy-policy.html">Quick Timeout 개인정보처리방침</a>
     </footer>
   </main>
+<script>
+const ko = [...document.querySelectorAll('header p,.tag,.copy,.install,footer')].map(e => e.innerHTML);
+const en = [
+ 'Small, practical apps<br>for Android, iPhone and iPad',
+ 'Android · A more intentional screen-time habit',
+ 'Track daily time in selected apps and get a reminder to take a break when you reach your chosen limit.',
+ 'Get App Break on Google Play',
+ 'Android · Your Bluetooth audio, in one place',
+ 'Organize already-paired headphones, car audio and speakers into profiles, and see their connection status at a glance.',
+ 'Get Link Now on Google Play',
+ 'iPhone · iPad — Keep your screen awake by timer',
+ 'Keep a recipe or reference visible for the time you choose. Keep the small status window running while you use other apps.',
+ 'Download free on the App Store',
+ 'Free on Google Play and the App Store. Apps may include ads.<br><a href="https://quicktimeoutsupport-cmd.github.io/app-break-privacy/privacy-policy.html">App Break privacy</a> · <a href="https://quicktimeoutsupport-cmd.github.io/linknow-privacy/privacy-policy.html">Link Now privacy</a> · <a href="https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/privacy-policy.html">Quick Timeout privacy</a>'
+];
+let english = !navigator.language.toLowerCase().startsWith('ko');
+function language() {
+ document.documentElement.lang = english ? 'en' : 'ko';
+ document.querySelectorAll('header p,.tag,.copy,.install,footer').forEach((e,i) => e.innerHTML = (english ? en : ko)[i]);
+ document.getElementById('language').textContent = english ? '한국어' : 'English';
+ document.querySelector('.apps').setAttribute('aria-label',english ? 'Our apps' : '앱 목록');
+}
+document.getElementById('language').addEventListener('click',()=>{english=!english;language();});
+language();
+</script>
 </body>
 </html>
