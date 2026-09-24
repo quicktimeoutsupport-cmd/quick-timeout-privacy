@@ -125,6 +125,7 @@
       <p>일상을 조금 더 편리하게 만드는<br>작고 실용적인 Android · iOS 앱</p>
     </header>
 
+    <nav style="text-align:center;margin:0 0 16px"><a id="guides-link" href="guides/" style="color:#dcd6ef;font-size:16px">앱 사용 안내 / App guides</a></nav>
     <section class="apps" aria-label="앱 목록">
       <article id="app_break">
         <div class="app-head">
@@ -207,6 +208,11 @@ function language() {
 }
 document.getElementById('language').addEventListener('click',()=>{english=!english;language();});
 language();
+const guideQuery = new URLSearchParams(location.search);
+for (const key of [...guideQuery.keys()]) {
+ if (!['source','content'].includes(key) || !/^[a-z_]{1,32}$/.test(guideQuery.get(key))) guideQuery.delete(key);
+}
+document.getElementById('guides-link').href = 'guides/' + (guideQuery.size ? '?' + guideQuery.toString() : '');
 </script>
 </body>
 </html>
