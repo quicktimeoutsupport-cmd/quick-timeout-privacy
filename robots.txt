@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/sitemap.xml
