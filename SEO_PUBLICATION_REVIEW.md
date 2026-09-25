@@ -17,8 +17,9 @@
 - 공개 기준 URL: `https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/`
 - 제출할 사이트맵: `https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/sitemap.xml`
 - 각 새 글에 canonical, 한·영 hreflang, Open Graph와 Article/HowTo 구조화 데이터 적용
-- Google Search Console은 `jdin240301@gmail.com` 계정에서 아직 등록된 웹사이트가
-  없으며 URL-prefix 속성 추가 화면까지 확인함.
+- Google Search Console은 제품 소유자가 지정한 `bonney79@gmail.com` 계정에서
+  아직 등록된 웹사이트가 없으며 URL-prefix 속성 추가 화면까지 확인함. 최초에
+  열었던 `jdin240301@gmail.com` 화면에서는 제출하지 않았음.
 
 ## 공개 후 실행
 
