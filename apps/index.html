@@ -34,6 +34,8 @@
     .install { display:flex; align-items:center; justify-content:center; flex:1; min-height:44px; padding:10px 12px; border-radius:12px; background:#293331; color:#fff; font-size:13px; font-weight:650; line-height:1.35; text-decoration:none; text-align:center; transition:background .15s; }
     .install:hover { background:#414e49; }
     a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #77714a; outline-offset:4px; }
+    .guide-links { display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; }
+    .guide-links a { color:var(--muted); font-size:12px; min-height:36px; display:inline-flex; align-items:center; }
     .note { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.4; }
     nav { display:flex; justify-content:center; gap:8px; margin-top:14px; }
     nav a { display:flex; align-items:center; justify-content:center; min-height:44px; padding:8px 14px; border-radius:12px; color:var(--ink); font-size:13px; text-decoration:none; }
@@ -63,6 +65,7 @@
         <div class="app-text"><h2>App Break</h2><p class="copy" data-i18n="ab">앱 사용 시간을 확인하고, 잠시 쉬어 가세요.</p></div>
       </div>
       <div class="downloads"><a class="install" data-app="app_break" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.pause" aria-label="App Break — Google Play">Google Play</a></div>
+    <div class="guide-links"><a data-guide="app-break" data-i18n="guide" href="guides/app-break-ko.html">사용 방법</a></div>
     </article>
     <article id="link_now">
       <div class="app-head">
@@ -70,6 +73,7 @@
         <div class="app-text"><h2>Link Now</h2><p class="copy" data-i18n="ln">자주 쓰는 블루투스 오디오를 한곳에.</p></div>
       </div>
       <div class="downloads"><a class="install" data-app="link_now" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.linknow" aria-label="Link Now — Google Play">Google Play</a></div>
+    <div class="guide-links"><a data-guide="link-now" data-i18n="guide" href="guides/link-now-ko.html">사용 방법</a></div>
     </article>
     <article id="quick_timeout">
       <div class="app-head">
@@ -80,14 +84,16 @@
         <a class="install" data-app="quick_timeout" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.quicktimeout" aria-label="Quick Timeout — Google Play">Google Play</a>
         <a class="install" data-app="quick_timeout" data-store="ios" href="https://apps.apple.com/kr/app/id6809292356" aria-label="Quick Timeout — App Store">App Store</a>
       </div>
+    <div class="guide-links"><a data-guide="quick-timeout-android" data-i18n="androidGuide" href="guides/quick-timeout-android-ko.html">Android 사용 방법</a><a data-guide="quick-timeout" data-i18n="iosGuide" href="guides/quick-timeout-ko.html">iPhone·iPad 사용 방법</a></div>
     </article>
     <article id="eat_run">
       <div class="app-head">
         <img id="eat-icon" class="app-icon" src="icons/eat-run-ko.png" width="48" height="48" alt="">
-        <div class="app-text"><h2 data-i18n="erName">먹빼 / EAT.RUN.</h2><p class="copy" data-i18n="er">간편한 식사 기록, 하루의 에너지를 한눈에.</p></div>
+        <div class="app-text"><h2 data-i18n="erName">먹빼 / EAT.RUN.</h2><p class="copy" data-i18n="er">744개 음식·음료 검색, 분량 선택으로 간편하게 기록.</p></div>
       </div>
       <div class="downloads"><a class="install" data-app="eat_run" data-store="ios" href="https://apps.apple.com/kr/app/id6813880654" aria-label="EAT.RUN. — App Store">App Store</a></div>
       <p class="note" data-i18n="erStatus">Android는 비공개 테스트 중입니다.</p>
+    <div class="guide-links"><a data-guide="eat-run" data-i18n="guide" href="guides/eat-run-ko.html">사용 방법</a></div>
     </article>
   </section>
   <nav aria-label="도움말">
@@ -107,11 +113,11 @@
     </details>
   </footer>
 </main>
-<script src="campaign-links.js?v=20260924"></script>
+<script src="campaign-links.js?v=20261017"></script>
 <script>
 const translations = {
- ko: { intro:'일상을 조금 더 편리하게.', ab:'앱 사용 시간을 확인하고, 잠시 쉬어 가세요.', ln:'자주 쓰는 블루투스 오디오를 한곳에.', qt:'필요한 시간만큼 화면을 켜 두세요.', erName:'먹빼 / EAT.RUN.', er:'간편한 식사 기록, 하루의 에너지를 한눈에.', erStatus:'Android는 비공개 테스트 중입니다.', guides:'앱 사용 안내 ↗', support:'문의하기 ↗', free:'무료 다운로드 · 앱 내 광고 포함', privacy:'개인정보처리방침' },
- en: { intro:'Small apps. A little help, every day.', ab:'Screen time, with room for a break.', ln:'Your Bluetooth audio, in one place.', qt:'Keep your screen awake on a timer.', erName:'EAT.RUN.', er:'A simple daily meal diary.', erStatus:'Android is currently in closed testing.', guides:'App guides ↗', support:'Get in touch ↗', free:'Free to download · Contains ads', privacy:'Privacy policies' }
+ ko: { guide:'사용 방법', androidGuide:'Android 사용 방법', iosGuide:'iPhone·iPad 사용 방법', intro:'일상을 조금 더 편리하게.', ab:'앱 사용 시간을 확인하고, 잠시 쉬어 가세요.', ln:'자주 쓰는 블루투스 오디오를 한곳에.', qt:'필요한 시간만큼 화면을 켜 두세요.', erName:'먹빼 / EAT.RUN.', er:'744개 음식·음료 검색, 분량 선택으로 간편하게 기록.', erStatus:'Android는 비공개 테스트 중입니다.', guides:'앱 사용 안내 ↗', support:'문의하기 ↗', free:'무료 다운로드 · 앱 내 광고 포함', privacy:'개인정보처리방침' },
+ en: { guide:'How to use', androidGuide:'Android guide', iosGuide:'iPhone/iPad guide', intro:'Small apps. A little help, every day.', ab:'Screen time, with room for a break.', ln:'Your Bluetooth audio, in one place.', qt:'Keep your screen awake on a timer.', erName:'EAT.RUN.', er:'Search 744 foods and drinks, choose a portion, and log it.', erStatus:'Android is currently in closed testing.', guides:'App guides ↗', support:'Get in touch ↗', free:'Free to download · Contains ads', privacy:'Privacy policies' }
 };
 let english = !navigator.language.toLowerCase().startsWith('ko');
 function language() {
@@ -124,13 +130,14 @@ function language() {
  toggle.setAttribute('aria-label',english ? '한국어로 전환' : 'Switch to English');
  document.querySelector('.apps').setAttribute('aria-label',english ? 'App downloads' : '앱 다운로드');
  document.querySelector('nav').setAttribute('aria-label',english ? 'Help' : '도움말');
+ document.querySelectorAll('[data-guide]').forEach(a=>{ const q=new URLSearchParams(location.search); for(const key of [...q.keys()]) if(!['source','content','campaign'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(q.get(key))) q.delete(key); a.href='guides/'+a.dataset.guide+'-'+lang+'.html'+(q.size?'?'+q.toString():''); });
  document.getElementById('eat-icon').src = english ? 'icons/eat-run-en.png' : 'icons/eat-run-ko.png';
 }
 document.getElementById('language').addEventListener('click',()=>{ english=!english; language(); });
 language();
 const guideQuery = new URLSearchParams(location.search);
 for (const key of [...guideQuery.keys()]) {
- if (!['source','content'].includes(key) || !/^[a-z_]{1,32}$/.test(guideQuery.get(key))) guideQuery.delete(key);
+ if (!['source','content','campaign'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(guideQuery.get(key))) guideQuery.delete(key);
 }
 document.getElementById('guides-link').href = 'guides/' + (guideQuery.size ? '?' + guideQuery.toString() : '');
 </script>
