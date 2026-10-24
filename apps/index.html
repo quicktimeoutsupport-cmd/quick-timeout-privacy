@@ -126,7 +126,7 @@
     </details>
   </footer>
 </main>
-<script src="campaign-links.js?v=20261021"></script>
+<script src="campaign-links.js?v=20261024"></script>
 <script>
 const translations = {
  ko: { ltName:'루모 틸트 / LumoTilt', lt:'살짝 기울여, 빛나는 구슬을 골인 링까지! 전기 벽을 피하고 보석을 모으며 1,000단계에 도전하세요.', ltStatus:'iPhone·iPad에서 지금 다운로드 · 12+', ltMeaning:'빛을 떠올리는 Lumo + 기울인다는 뜻의 Tilt. 친구와 번갈아 도전해 보세요.', metaDescription:'Bonney Apps의 공식 다운로드. App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트를 한곳에서 만나보세요.', guide:'사용 방법', androidGuide:'Android 사용 방법', iosGuide:'iPhone·iPad 사용 방법', intro:'일상을 조금 더 편리하게.', ab:'앱 사용 시간을 확인하고, 잠시 쉬어 가세요.', ln:'자주 쓰는 블루투스 오디오를 한곳에.', qt:'필요한 시간만큼 화면을 켜 두세요.', erName:'먹빼 / EAT.RUN.', er:'먹은 음식의 하루 기준 초과분을 예상 러닝 거리로. 러닝 전, 가볍게 확인하세요.', erAndroidStatus:'Google Play 심사 중', erStatus:'Android는 Google Play 심사 중입니다. iPhone·iPad에서는 지금 다운로드할 수 있어요.', guides:'앱 사용 안내 ↗', support:'문의하기 ↗', free:'무료 다운로드 · 앱 내 광고 포함', privacy:'개인정보처리방침' },
@@ -135,6 +135,8 @@ const translations = {
 const entryQuery = new URLSearchParams(location.search);
 const entryLanguage = entryQuery.get('campaign') === 'growth_20261021'
  ? /^(qt|ab|ln|er|lt)_(android|ios)_(ko|en)$/.exec(entryQuery.get('content') || '')?.[3]
+ : entryQuery.get('campaign') === 'install_20261024'
+ ? /^(qt|ab|ln|er|lt)_(android|ios)_(ko|en)_[a-z0-9]{1,7}$/.exec(entryQuery.get('content') || '')?.[3]
  : null;
 let english = entryLanguage ? entryLanguage === 'en' : !navigator.language.toLowerCase().startsWith('ko');
 function language() {
@@ -150,7 +152,7 @@ function language() {
  toggle.setAttribute('aria-label',english ? '한국어로 전환' : 'Switch to English');
  document.querySelector('.apps').setAttribute('aria-label',english ? 'App downloads' : '앱 다운로드');
  document.querySelector('nav').setAttribute('aria-label',english ? 'Help' : '도움말');
- document.querySelectorAll('[data-guide]').forEach(a=>{ const q=new URLSearchParams(location.search); for(const key of [...q.keys()]) if(!['source','content','campaign'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(q.get(key))) q.delete(key); a.href='guides/'+a.dataset.guide+'-'+lang+'.html'+(q.size?'?'+q.toString():''); });
+ document.querySelectorAll('[data-guide]').forEach(a=>{ const q=new URLSearchParams(location.search); for(const key of [...q.keys()]) if(!['source','content','campaign','medium'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(q.get(key))) q.delete(key); a.href='guides/'+a.dataset.guide+'-'+lang+'.html'+(q.size?'?'+q.toString():''); });
  document.getElementById('eat-icon').src = english ? 'icons/eat-run-en.png' : 'icons/eat-run-ko.png';
  document.querySelectorAll('.install[data-store="ios"]').forEach(a => {
   const url = new URL(a.href);
@@ -161,7 +163,7 @@ document.getElementById('language').addEventListener('click',()=>{ english=!engl
 language();
 const guideQuery = new URLSearchParams(location.search);
 for (const key of [...guideQuery.keys()]) {
- if (!['source','content','campaign'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(guideQuery.get(key))) guideQuery.delete(key);
+ if (!['source','content','campaign','medium'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(guideQuery.get(key))) guideQuery.delete(key);
 }
 document.getElementById('guides-link').href = 'guides/' + (guideQuery.size ? '?' + guideQuery.toString() : '');
 </script>

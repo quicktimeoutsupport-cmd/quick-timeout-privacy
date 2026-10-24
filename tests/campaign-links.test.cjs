@@ -42,3 +42,36 @@ const legacy=run('?source=youtube&campaign=growth_20261017&content=qt_android_ko
 assert.equal(new URL(legacy.qt.href).searchParams.get('ct'),'yt_growth_20261017');
 assert.equal(new URLSearchParams(new URL(legacy.ab.href).searchParams.get('referrer')).get('utm_campaign'),'growth_20261017');
 console.log('PASS: 7 channels × 2 languages; app/platform separation, official destinations, invalid input and legacy cohort continuity');
+const seenNew = new Set();
+for (const source of ['youtube','instagram','tiktok','disquiet','sidedock','producthunt','reddit']) {
+ for (const lang of ['ko','en']) {
+  for (const origin of ['qt_ios','qt_android','er_ios']) {
+   const result=run(`?source=${source}&campaign=install_20261024&content=${origin}_${lang}_intro`);
+   for (const key of ['qt','er','ab']) {
+    const u=new URL(result[key].href), t=u.searchParams.get(key==='ab'?'utm_campaign':'ct');
+    assert.ok(t && t.length<=30);
+    assert.ok(!seenNew.has(t),t); seenNew.add(t);
+    if(key==='ab') {
+     const r=new URLSearchParams(u.searchParams.get('referrer'));
+     assert.equal(r.get('utm_content'),`${origin}_${lang}_intro`);
+     assert.equal(r.get('utm_campaign'),t);
+     assert.equal(u.searchParams.get('utm_content'),r.get('utm_content'));
+    }
+   }
+   assert.equal(result.hostile.href,base.hostile.href);
+  }
+ }
+ const profile=run(`?source=${source}&campaign=install_20261024&content=all_any_bi_profile`);
+ assert.ok(new URL(profile.qt.href).searchParams.get('ct').includes('_bi_'));
+}
+for(const content of ['all_any_ko_intro','qt_ios_bi_intro','qt_ios_ko_bad','qt_any_ko_intro','all_ios_en_profile','qt_ios_ko_profile','../../bad']) {
+ const r=run(`?source=youtube&campaign=install_20261024&content=${content}`);
+ for(const k of ['qt','er','ab']) assert.equal(r[k].href,base[k].href);
+}
+console.log('PASS: new cohort separates source/creative/language and origin/destination app/platform; profile language stays bilingual');
+for(const source of ['youtube','instagram','tiktok','disquiet','sidedock','producthunt','reddit']) {
+ const profile=run(`?source=${source}&medium=profile&campaign=growth_20261017`);
+ assert.ok(new URL(profile.qt.href).searchParams.get('ct').endsWith('_261024'));
+ assert.ok(new URL(profile.qt.href).searchParams.get('ct').includes('_bi_'));
+}
+console.log('PASS: generic profile links use a declared new cohort; old material links retain old cohorts');

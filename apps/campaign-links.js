@@ -1,6 +1,53 @@
 // Explicit campaign links only. No cookies, visitor IDs or referrer inference.
 (() => {
   const params = new URLSearchParams(location.search);
+  // Explicit cohort cut-over for generic profile links only. Their public
+  // short URLs stay usable; recorded historical totals keep the old tokens.
+  // Material-specific 202609/20261008/17/21 links retain their exact tokens.
+  const profileSources = new Set(['youtube','instagram','tiktok','disquiet','sidedock','producthunt','reddit']);
+  if (profileSources.has(params.get('source')) && !params.get('content') &&
+      ['profile','bio'].includes(params.get('medium')) &&
+      (!params.get('campaign') || params.get('campaign') === 'growth_20261017')) {
+    params.set('campaign','install_20261024');
+    params.set('content','all_any_bi_profile');
+  }
+  // A new, explicitly named cohort. Historical links below keep their tokens.
+  // Language describes the originating creative; switching page language must
+  // not rewrite its attribution. "bi" means a bilingual profile, not a guess.
+  if (params.get('campaign') === 'install_20261024') {
+    const sources = {youtube:'yt', instagram:'ig', tiktok:'tt', disquiet:'dq', sidedock:'sd', producthunt:'ph', reddit:'rd'};
+    const apps = {quick_timeout:'qt', app_break:'ab', link_now:'ln', eat_run:'er', lumo_tilt:'lt'};
+    const creatives = new Set(['profile','intro','qtrcp','qtdiy','errun','lttilt','abbed','lncar','lndesk']);
+    const source = params.get('source');
+    const match = /^(qt|ab|ln|er|lt|all)_(android|ios|any)_(ko|en|bi)_([a-z0-9]{1,7})$/.exec(params.get('content') || '');
+    if (!Object.hasOwn(sources, source) || !match || !creatives.has(match[4])) return;
+    const [, originApp, originPlatform, lang, creative] = match;
+    if ((originApp === 'all') !== (originPlatform === 'any') ||
+        (creative === 'profile') !== (originApp === 'all') ||
+        (lang === 'bi' && creative !== 'profile')) return;
+    document.querySelectorAll('.install[data-app][data-store]').forEach(link => {
+      const app = apps[link.dataset.app], platform = link.dataset.store;
+      if (!app || !['android','ios'].includes(platform)) return;
+      const target = new URL(link.href);
+      if (platform === 'ios' && !/^\/((kr|us)\/)?app\/(id\d+|apple-store\/id\d+)$/.test(target.pathname)) return;
+      if (platform === 'ios' && target.hostname !== 'apps.apple.com') return;
+      if (platform === 'android' && (target.hostname !== 'play.google.com' || target.pathname !== '/store/apps/details')) return;
+      const origin = `${originApp}${originPlatform[0]}${creative}`;
+      const campaign = `${sources[source]}_${app}${platform[0]}_${lang}_${origin}_261024`;
+      if (platform === 'ios') {
+        target.searchParams.set('pt','129336484');
+        target.searchParams.set('ct',campaign);
+        target.searchParams.set('mt','8');
+      } else {
+        const tags = {utm_source:source, utm_medium:creative === 'profile' ? 'profile' : 'organic_social',
+          utm_campaign:campaign, utm_content:match[0]};
+        for (const [key,value] of Object.entries(tags)) target.searchParams.set(key,value);
+        target.searchParams.set('referrer',new URLSearchParams(tags).toString());
+      }
+      link.href = target.href;
+    });
+    return;
+  }
   // New cohorts have explicit app/platform/language campaign IDs. Keep every
   // historical query below unchanged, including the old shared growth cohort.
   if (params.get('campaign') === 'growth_20261021') {
