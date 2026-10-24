@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-24</lastmod>
   </url>
   <url>
     <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/privacy-policy.html</loc>
   </url>
   <url>
     <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-24</lastmod>
   </url>
   <url>
     <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/app-break-ko.html</loc>
@@ -82,5 +82,21 @@
   <url>
     <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/quick-timeout-android-en.html</loc>
     <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/lumo-tilt-ko.html</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/lumo-tilt-en.html</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/readmori-ko.html</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/guides/readmori-en.html</loc>
+    <lastmod>2026-10-24</lastmod>
   </url>
 </urlset>
