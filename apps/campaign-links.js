@@ -5,8 +5,9 @@
   // short URLs stay usable; recorded historical totals keep the old tokens.
   // Material-specific 202609/20261008/17/21 links retain their exact tokens.
   const profileSources = new Set(['youtube','instagram','tiktok','disquiet','sidedock','producthunt','reddit']);
+  const knownBareProfile = ['youtube','instagram'].includes(params.get('source')) && !params.get('medium');
   if (profileSources.has(params.get('source')) && !params.get('content') &&
-      ['profile','bio'].includes(params.get('medium')) &&
+      (knownBareProfile || ['profile','bio'].includes(params.get('medium'))) &&
       (!params.get('campaign') || params.get('campaign') === 'growth_20261017')) {
     params.set('campaign','install_20261024');
     params.set('content','all_any_bi_profile');

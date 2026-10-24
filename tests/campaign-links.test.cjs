@@ -75,3 +75,9 @@ for(const source of ['youtube','instagram','tiktok','disquiet','sidedock','produ
  assert.ok(new URL(profile.qt.href).searchParams.get('ct').includes('_bi_'));
 }
 console.log('PASS: generic profile links use a declared new cohort; old material links retain old cohorts');
+for(const source of ['youtube','instagram']) {
+ const r=run(`?source=${source}`);
+ assert.ok(new URL(r.qt.href).searchParams.get('ct').endsWith('_261024'));
+ assert.notEqual(new URL(r.qt.href).searchParams.get('ct'),new URL(r.er.href).searchParams.get('ct'));
+}
+console.log('PASS: verified bonney-yt / bonney-ig bare profile destinations are covered');
