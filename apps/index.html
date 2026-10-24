@@ -22,6 +22,10 @@
     h1 { margin:0; font-size:25px; letter-spacing:-.9px; }
     .intro { margin:7px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
     #language { position:absolute; top:0; right:0; min-height:44px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--muted); font:inherit; font-size:13px; cursor:pointer; }
+    .app-jumps { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0 16px; justify-content:flex-start; }
+    .app-jumps a { min-height:44px; padding:10px 12px; border:1px solid #d5dcd5; border-radius:12px; background:#fff; text-decoration:none; font-size:13px; color:var(--ink); }
+    .app-jumps a:first-child { background:#293331;color:white; }
+    .jump-label { margin:0; font-size:13px; color:var(--muted); }
     .apps { display:grid; gap:10px; }
     article { padding:12px; border:1px solid #e7e7e1; border-radius:20px; background:#fff; box-shadow:0 4px 14px #29333106; scroll-margin-top:18px; }
     article:target { border-color:var(--accent); }
@@ -58,6 +62,14 @@
     <h1>Bonney Apps</h1>
     <p class="intro" data-i18n="intro">일상을 조금 더 편리하게.</p>
   </header>
+  <p class="jump-label" data-i18n="findApp">영상에서 본 앱을 바로 찾아보세요.</p>
+  <div class="app-jumps">
+    <a href="#lumo_tilt" data-i18n="ltName">루모 틸트 / LumoTilt</a>
+    <a href="#eat_run" data-i18n="erName">먹빼 / EAT.RUN.</a>
+    <a href="#quick_timeout">Quick Timeout</a>
+    <a href="#app_break">App Break</a>
+    <a href="#link_now">Link Now</a>
+  </div>
   <section class="apps" aria-label="앱 다운로드">
     <article id="app_break">
       <div class="app-head">
@@ -103,7 +115,7 @@
         <img class="app-icon" src="icons/lumo-tilt.png" width="48" height="48" alt="">
         <div class="app-text"><h2 data-i18n="ltName">루모 틸트 / LumoTilt</h2><p class="copy" data-i18n="lt">살짝 기울여, 빛나는 구슬을 골인 링까지! 전기 벽을 피하고 보석을 모으며 1,000단계에 도전하세요.</p></div>
       </div>
-      <div class="downloads"><a class="install" data-app="lumo_tilt" data-store="ios" href="https://apps.apple.com/kr/app/id6823873526" aria-label="LumoTilt — App Store">App Store</a></div>
+      <div class="downloads"><a class="install" data-app="lumo_tilt" data-store="ios" href="https://apps.apple.com/kr/app/id6823873526" aria-label="LumoTilt — App Store" data-i18n="ltDownload">App Store에서 무료 다운로드</a></div>
       <div class="guide-links"><a data-guide="lumo-tilt" data-i18n="guide" href="guides/lumo-tilt-ko.html">사용 방법</a></div>
       <p class="note" data-i18n="ltStatus">iPhone·iPad에서 지금 다운로드 · 12+</p>
       <p class="note" data-i18n="ltMeaning">빛을 떠올리는 Lumo + 기울인다는 뜻의 Tilt. 친구와 번갈아 도전해 보세요.</p>
@@ -130,8 +142,8 @@
 <script src="campaign-links.js?v=20261024"></script>
 <script>
 const translations = {
- ko: { ltName:'루모 틸트 / LumoTilt', lt:'살짝 기울여, 빛나는 구슬을 골인 링까지! 전기 벽을 피하고 보석을 모으며 1,000단계에 도전하세요.', ltStatus:'iPhone·iPad에서 지금 다운로드 · 12+', ltMeaning:'빛을 떠올리는 Lumo + 기울인다는 뜻의 Tilt. 친구와 번갈아 도전해 보세요.', metaDescription:'Bonney Apps의 공식 다운로드. App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트를 한곳에서 만나보세요.', guide:'사용 방법', androidGuide:'Android 사용 방법', iosGuide:'iPhone·iPad 사용 방법', intro:'일상을 조금 더 편리하게.', ab:'앱 사용 시간을 확인하고, 잠시 쉬어 가세요.', ln:'자주 쓰는 블루투스 오디오를 한곳에.', qt:'필요한 시간만큼 화면을 켜 두세요.', erName:'먹빼 / EAT.RUN.', er:'먹은 음식의 하루 기준 초과분을 예상 러닝 거리로. 러닝 전, 가볍게 확인하세요.', erAndroidStatus:'Google Play 심사 중', erStatus:'Android는 Google Play 심사 중입니다. iPhone·iPad에서는 지금 다운로드할 수 있어요.', guides:'앱 사용 안내 ↗', support:'문의하기 ↗', free:'무료 다운로드 · 앱 내 광고 포함', privacy:'개인정보처리방침' },
- en: { ltName:'LumoTilt', lt:'Tilt your phone. Roll the glowing ball into the goal! Dodge electric walls, collect gems and take on 1,000 levels.', ltStatus:'Available now for iPhone and iPad · 12+', ltMeaning:'Lumo evokes light; Tilt is how you play. Pass the phone and take turns with friends.', metaDescription:'Official downloads for App Break, Link Now, Quick Timeout, EAT.RUN. and LumoTilt by Bonney Apps.', guide:'How to use', androidGuide:'Android guide', iosGuide:'iPhone/iPad guide', intro:'Small apps. A little help, every day.', ab:'Screen time, with room for a break.', ln:'Your Bluetooth audio, in one place.', qt:'Keep your screen awake on a timer.', erName:'EAT.RUN.', er:'Before your run, see calories above your daily baseline as estimated running kilometres.', erAndroidStatus:'Google Play review pending', erStatus:'Android is under Google Play review. Available now for iPhone and iPad.', guides:'App guides ↗', support:'Get in touch ↗', free:'Free to download · Contains ads', privacy:'Privacy policies' }
+ ko: { findApp:'영상에서 본 앱을 바로 찾아보세요.', ltDownload:'App Store에서 무료 다운로드', ltName:'루모 틸트 / LumoTilt', lt:'살짝 기울여, 빛나는 구슬을 골인 링까지! 전기 벽을 피하고 보석을 모으며 1,000단계에 도전하세요.', ltStatus:'iPhone·iPad에서 지금 다운로드 · 12+', ltMeaning:'빛을 떠올리는 Lumo + 기울인다는 뜻의 Tilt. 친구와 번갈아 도전해 보세요.', metaDescription:'Bonney Apps의 공식 다운로드. App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트를 한곳에서 만나보세요.', guide:'사용 방법', androidGuide:'Android 사용 방법', iosGuide:'iPhone·iPad 사용 방법', intro:'일상을 조금 더 편리하게.', ab:'앱 사용 시간을 확인하고, 잠시 쉬어 가세요.', ln:'자주 쓰는 블루투스 오디오를 한곳에.', qt:'필요한 시간만큼 화면을 켜 두세요.', erName:'먹빼 / EAT.RUN.', er:'먹은 음식의 하루 기준 초과분을 예상 러닝 거리로. 러닝 전, 가볍게 확인하세요.', erAndroidStatus:'Google Play 심사 중', erStatus:'Android는 Google Play 심사 중입니다. iPhone·iPad에서는 지금 다운로드할 수 있어요.', guides:'앱 사용 안내 ↗', support:'문의하기 ↗', free:'무료 다운로드 · 앱 내 광고 포함', privacy:'개인정보처리방침' },
+ en: { findApp:'Find the app you saw in our videos.', ltDownload:'Download free on the App Store', ltName:'LumoTilt', lt:'Tilt your phone. Roll the glowing ball into the goal! Dodge electric walls, collect gems and take on 1,000 levels.', ltStatus:'Available now for iPhone and iPad · 12+', ltMeaning:'Lumo evokes light; Tilt is how you play. Pass the phone and take turns with friends.', metaDescription:'Official downloads for App Break, Link Now, Quick Timeout, EAT.RUN. and LumoTilt by Bonney Apps.', guide:'How to use', androidGuide:'Android guide', iosGuide:'iPhone/iPad guide', intro:'Small apps. A little help, every day.', ab:'Screen time, with room for a break.', ln:'Your Bluetooth audio, in one place.', qt:'Keep your screen awake on a timer.', erName:'EAT.RUN.', er:'Before your run, see calories above your daily baseline as estimated running kilometres.', erAndroidStatus:'Google Play review pending', erStatus:'Android is under Google Play review. Available now for iPhone and iPad.', guides:'App guides ↗', support:'Get in touch ↗', free:'Free to download · Contains ads', privacy:'Privacy policies' }
 };
 const entryQuery = new URLSearchParams(location.search);
 const entryLanguage = entryQuery.get('campaign') === 'growth_20261021'
