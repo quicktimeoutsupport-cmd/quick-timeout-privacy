@@ -3,147 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bonney Apps의 공식 다운로드. App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트를 한곳에서 만나보세요.">
+  <meta name="description" content="Bonney Apps의 공식 다운로드. App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트, 리드모리를 한곳에서 만나보세요.">
   <meta name="theme-color" content="#f6f5f2">
   <title>Bonney Apps · 다운로드</title>
   <link rel="canonical" href="https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bonney Apps — Android · iPhone · iPad 앱">
-  <meta property="og:description" content="App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트의 공식 다운로드와 사용 안내.">
+  <meta property="og:description" content="App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트, 리드모리의 공식 다운로드.">
   <meta property="og:url" content="https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Bonney Apps","itemListElement":[{"@type":"ListItem","position":1,"name":"App Break","url":"https://play.google.com/store/apps/details?id=com.developerbonney.pause"},{"@type":"ListItem","position":2,"name":"Link Now","url":"https://play.google.com/store/apps/details?id=com.developerbonney.linknow"},{"@type":"ListItem","position":3,"name":"Quick Timeout","url":"https://play.google.com/store/apps/details?id=com.developerbonney.quicktimeout"},{"@type":"ListItem","position":4,"name":"EAT.RUN.","url":"https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#eat_run"},{"@type":"ListItem","position":5,"name":"LumoTilt","url":"https://apps.apple.com/app/id6823873526"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Bonney Apps", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "App Break", "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#app_break"}, {"@type": "ListItem", "position": 2, "name": "Link Now", "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#link_now"}, {"@type": "ListItem", "position": 3, "name": "Quick Timeout", "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#quick_timeout"}, {"@type": "ListItem", "position": 4, "name": "EAT.RUN.", "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#eat_run"}, {"@type": "ListItem", "position": 5, "name": "LumoTilt", "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#lumo_tilt"}, {"@type": "ListItem", "position": 6, "name": "Readmori", "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/#readmori"}]}</script>
   <style>
-    :root { color-scheme: light; --ink:#252b2b; --muted:#626b68; --accent:#62604f; }
+    :root { color-scheme:light; --ink:#252e2a; --muted:#65706a; --paper:#f6f5f2; --line:#e3e6de; }
     * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); background:#f6f5f2; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
-    main { width:min(100%,520px); margin:auto; padding:18px 16px 18px; }
-    header { position:relative; text-align:center; margin-bottom:16px; }
-    .mark { display:grid; place-items:center; width:56px; height:56px; margin:0 auto 9px; border-radius:50%; background:#293331; color:#fff; font-size:28px; font-weight:750; box-shadow:0 5px 16px #29333115; }
-    h1 { margin:0; font-size:25px; letter-spacing:-.9px; }
-    .intro { margin:7px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
-    #language { position:absolute; top:0; right:0; min-height:44px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--muted); font:inherit; font-size:13px; cursor:pointer; }
-    .app-jumps { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0 16px; justify-content:flex-start; }
-    .app-jumps a { min-height:44px; padding:10px 12px; border:1px solid #d5dcd5; border-radius:12px; background:#fff; text-decoration:none; font-size:13px; color:var(--ink); }
-    .app-jumps a:first-child { background:#293331;color:white; }
-    .jump-label { margin:0; font-size:13px; color:var(--muted); }
-    .apps { display:grid; gap:10px; }
-    article { padding:12px; border:1px solid #e7e7e1; border-radius:20px; background:#fff; box-shadow:0 4px 14px #29333106; scroll-margin-top:18px; }
-    article:target { border-color:var(--accent); }
-    .app-head { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
-    .app-icon { width:40px; height:40px; flex:none; border-radius:13px; object-fit:cover; }
-    .app-text { min-width:0; }
-    h2 { margin:0 0 3px; font-size:16px; font-weight:750; letter-spacing:-.35px; }
-    .copy { margin:0; color:var(--muted); font-size:12px; line-height:1.4; }
-    .downloads { display:flex; gap:8px; }
-    .install { display:flex; align-items:center; justify-content:center; flex:1; min-height:44px; padding:10px 12px; border-radius:12px; background:#293331; color:#fff; font-size:13px; font-weight:650; line-height:1.35; text-decoration:none; text-align:center; transition:background .15s; }
-    .install:hover { background:#414e49; }
-    a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #77714a; outline-offset:4px; }
-    .guide-links { display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; }
-    .guide-links a { color:var(--muted); font-size:12px; min-height:36px; display:inline-flex; align-items:center; }
-    .note { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.4; }
-    nav { display:flex; justify-content:center; gap:8px; margin-top:14px; }
-    nav a { display:flex; align-items:center; justify-content:center; min-height:44px; padding:8px 14px; border-radius:12px; color:var(--ink); font-size:13px; text-decoration:none; }
-    nav a:hover { background:#eae9e3; }
-    footer { margin-top:8px; text-align:center; color:var(--muted); font-size:11px; line-height:1.6; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+    main { max-width:840px; margin:auto; padding:12px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; min-height:44px; }
+    h1 { margin:0; font-size:21px; letter-spacing:-.7px; }
+    #language { min-height:44px; padding:8px 10px; border:0; border-radius:10px; background:transparent; color:var(--muted); font:inherit; font-size:12px; cursor:pointer; }
+    .apps { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+    article { min-width:0; padding:9px; border:1px solid var(--line); border-radius:15px; background:#fff; scroll-margin-top:12px; }
+    article:target { border-color:#8a978d; }
+    .app-head { display:flex; align-items:center; gap:7px; min-height:32px; }
+    .app-icon { flex:none; width:32px; height:32px; object-fit:cover; border-radius:9px; }
+    h2 { margin:0; min-width:0; font-size:13px; line-height:16px; letter-spacing:-.25px; overflow-wrap:anywhere; }
+    .age { display:inline-block; margin-left:4px; color:var(--muted); font-size:10px; font-weight:400; }
+    .copy { margin:6px 0; min-height:28px; color:var(--muted); font-size:11.5px; line-height:14px; }
+    .downloads { display:flex; gap:5px; }
+    .install { display:flex; flex:1; align-items:center; justify-content:center; min-width:0; min-height:44px; padding:6px 2px; border-radius:9px; color:#fff; background:#293b32; font-size:10.5px; line-height:14px; font-weight:650; text-align:center; text-decoration:none; white-space:nowrap; }
+    .install:hover { background:#405c4b; }
+    a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #87825f; outline-offset:3px; }
+    footer { margin-top:9px; color:var(--muted); text-align:center; font-size:10.5px; line-height:14px; }
     footer p { margin:0; }
-    details { margin-top:7px; }
-    summary { display:inline-block; min-height:28px; padding:4px 8px; cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
-    .privacy-links { display:flex; flex-wrap:wrap; gap:4px 12px; justify-content:center; margin-top:4px; }
-    .privacy-links a { display:inline-flex; align-items:center; min-height:32px; color:var(--muted); }
-    @media(min-width:600px) { main { padding-top:40px; padding-bottom:30px; } header { margin-bottom:26px; } article { padding:16px; } }
-    @media(prefers-reduced-motion:reduce) { * { transition:none!important; } }
+    .footer-links { display:flex; align-items:flex-start; justify-content:center; gap:12px; }
+    .footer-links > a,summary { display:inline-flex; align-items:center; min-height:36px; padding:6px 0; color:var(--muted); text-decoration:none; cursor:pointer; }
+    details { max-width:70%; }
+    .privacy-links { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 10px; padding-bottom:6px; }
+    .privacy-links a { min-height:28px; display:inline-flex; align-items:center; color:var(--muted); }
+    @media(min-width:600px) { main { padding:24px; } header { margin-bottom:14px; } .apps { grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; } article { padding:14px; } h2 { font-size:15px; line-height:19px; } .app-head { min-height:38px; } .app-icon { width:38px; height:38px; } .copy { margin:10px 0; min-height:34px; font-size:13px; line-height:17px; } .install { font-size:12px; } footer { margin-top:14px; font-size:12px; } }
+    @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
   </style>
 </head>
 <body>
 <main>
-  <header>
-    <button id="language" type="button" aria-label="Switch to English">English</button>
-    <div class="mark" aria-hidden="true">B</div>
-    <h1>Bonney Apps</h1>
-    <p class="intro" data-i18n="intro">일상을 조금 더 편리하게.</p>
-  </header>
-  <p class="jump-label" data-i18n="findApp">영상에서 본 앱을 바로 찾아보세요.</p>
-  <div class="app-jumps">
-    <a href="#lumo_tilt" data-i18n="ltName">루모 틸트 / LumoTilt</a>
-    <a href="#eat_run" data-i18n="erName">먹빼 / EAT.RUN.</a>
-    <a href="#quick_timeout">Quick Timeout</a>
-    <a href="#app_break">App Break</a>
-    <a href="#link_now">Link Now</a>
-  </div>
+  <header><h1>Bonney Apps</h1><button id="language" type="button" aria-label="Switch to English">English</button></header>
   <section class="apps" aria-label="앱 다운로드">
     <article id="app_break">
-      <div class="app-head">
-        <img class="app-icon" src="icons/app-break.png" width="48" height="48" alt="">
-        <div class="app-text"><h2>App Break</h2><p class="copy" data-i18n="ab">앱 사용 시간을 확인하고, 잠시 쉬어 가세요.</p></div>
-      </div>
+      <div class="app-head"><img class="app-icon" src="icons/app-break.png" width="32" height="32" alt=""><h2><span data-i18n="app_breakName">App Break</span></h2></div>
+      <p class="copy" data-i18n="app_breakCopy">앱 사용을 잠시 쉬어 가세요.</p>
       <div class="downloads"><a class="install" data-app="app_break" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.pause" aria-label="App Break — Google Play">Google Play</a></div>
-    <div class="guide-links"><a data-guide="app-break" data-i18n="guide" href="guides/app-break-ko.html">사용 방법</a></div>
     </article>
     <article id="link_now">
-      <div class="app-head">
-        <img class="app-icon" src="icons/link-now.png" width="48" height="48" alt="">
-        <div class="app-text"><h2>Link Now</h2><p class="copy" data-i18n="ln">자주 쓰는 블루투스 오디오를 한곳에.</p></div>
-      </div>
+      <div class="app-head"><img class="app-icon" src="icons/link-now.png" width="32" height="32" alt=""><h2><span data-i18n="link_nowName">Link Now</span></h2></div>
+      <p class="copy" data-i18n="link_nowCopy">블루투스 오디오를 한곳에.</p>
       <div class="downloads"><a class="install" data-app="link_now" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.linknow" aria-label="Link Now — Google Play">Google Play</a></div>
-    <div class="guide-links"><a data-guide="link-now" data-i18n="guide" href="guides/link-now-ko.html">사용 방법</a></div>
     </article>
     <article id="quick_timeout">
-      <div class="app-head">
-        <img class="app-icon" src="icons/quick-timeout.png" width="48" height="48" alt="">
-        <div class="app-text"><h2>Quick Timeout</h2><p class="copy" data-i18n="qt">필요한 시간만큼 화면을 켜 두세요.</p></div>
-      </div>
-      <div class="downloads">
-        <a class="install" data-app="quick_timeout" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.quicktimeout" aria-label="Quick Timeout — Google Play">Google Play</a>
-        <a class="install" data-app="quick_timeout" data-store="ios" href="https://apps.apple.com/kr/app/id6809292356" aria-label="Quick Timeout — App Store">App Store</a>
-      </div>
-    <div class="guide-links"><a data-guide="quick-timeout-android" data-i18n="androidGuide" href="guides/quick-timeout-android-ko.html">Android 사용 방법</a><a data-guide="quick-timeout" data-i18n="iosGuide" href="guides/quick-timeout-ko.html">iPhone·iPad 사용 방법</a></div>
+      <div class="app-head"><img class="app-icon" src="icons/quick-timeout.png" width="32" height="32" alt=""><h2><span data-i18n="quick_timeoutName">Quick Timeout</span></h2></div>
+      <p class="copy" data-i18n="quick_timeoutCopy">필요한 시간만 화면 켜 두기.</p>
+      <div class="downloads"><a class="install" data-app="quick_timeout" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.quicktimeout" aria-label="Quick Timeout — Google Play">Google Play</a><a class="install" data-app="quick_timeout" data-store="ios" href="https://apps.apple.com/kr/app/id6809292356" aria-label="Quick Timeout — App Store">App Store</a></div>
     </article>
     <article id="eat_run">
-      <div class="app-head">
-        <img id="eat-icon" class="app-icon" src="icons/eat-run-ko.png" width="48" height="48" alt="">
-        <div class="app-text"><h2 data-i18n="erName">먹빼 / EAT.RUN.</h2><p class="copy" data-i18n="er">먹은 음식의 하루 기준 초과분을 예상 러닝 거리로. 러닝 전, 가볍게 확인하세요.</p></div>
-      </div>
-      <div class="downloads">
-        <a class="install" data-app="eat_run" data-store="android" data-i18n="erAndroidStatus" href="https://play.google.com/store/apps/details?id=com.developerbonney.eatrun" aria-label="EAT.RUN. — Google Play">Google Play</a>
-        <a class="install" data-app="eat_run" data-store="ios" href="https://apps.apple.com/kr/app/id6813880654" aria-label="EAT.RUN. — App Store">App Store</a>
-      </div>
-      <p class="note" data-i18n="erStatus">Android·iPhone·iPad에서 지금 다운로드할 수 있어요.</p>
-    <div class="guide-links"><a data-guide="eat-run" data-i18n="guide" href="guides/eat-run-ko.html">사용 방법</a></div>
+      <div class="app-head"><img id="eat-icon" class="app-icon" src="icons/eat-run-ko.png" width="32" height="32" alt=""><h2><span data-i18n="eat_runName">먹빼</span></h2></div>
+      <p class="copy" data-i18n="eat_runCopy">뛰기 전, 예상 러닝 거리.</p>
+      <div class="downloads"><a class="install" data-app="eat_run" data-store="android" href="https://play.google.com/store/apps/details?id=com.developerbonney.eatrun" aria-label="EAT.RUN. — Google Play">Google Play</a><a class="install" data-app="eat_run" data-store="ios" href="https://apps.apple.com/kr/app/id6813880654" aria-label="EAT.RUN. — App Store">App Store</a></div>
     </article>
     <article id="lumo_tilt">
-      <div class="app-head">
-        <img class="app-icon" src="icons/lumo-tilt.png" width="48" height="48" alt="">
-        <div class="app-text"><h2 data-i18n="ltName">루모 틸트 / LumoTilt</h2><p class="copy" data-i18n="lt">살짝 기울여, 빛나는 구슬을 골인 링까지! 전기 벽을 피하고 보석을 모으며 1,000단계에 도전하세요.</p></div>
-      </div>
-      <div class="downloads"><a class="install" data-app="lumo_tilt" data-store="ios" href="https://apps.apple.com/kr/app/id6823873526" aria-label="LumoTilt — App Store" data-i18n="ltDownload">App Store에서 무료 다운로드</a></div>
-      <div class="guide-links"><a data-guide="lumo-tilt" data-i18n="guide" href="guides/lumo-tilt-ko.html">사용 방법</a></div>
-      <p class="note" data-i18n="ltStatus">iPhone·iPad에서 지금 다운로드 · 12+</p>
-      <p class="note" data-i18n="ltMeaning">빛을 떠올리는 Lumo + 기울인다는 뜻의 Tilt. 친구와 번갈아 도전해 보세요.</p>
+      <div class="app-head"><img class="app-icon" src="icons/lumo-tilt.png" width="32" height="32" alt=""><h2><span data-i18n="lumo_tiltName">루모 틸트</span><span class="age">12+</span></h2></div>
+      <p class="copy" data-i18n="lumo_tiltCopy">기울여 즐기는 빛나는 구슬 미로.</p>
+      <div class="downloads"><a class="install" data-app="lumo_tilt" data-store="ios" href="https://apps.apple.com/kr/app/id6823873526" aria-label="LumoTilt — App Store">App Store</a></div>
+    </article>
+    <article id="readmori">
+      <div class="app-head"><img class="app-icon" src="icons/readmori.png" width="32" height="32" alt=""><h2><span data-i18n="readmoriName">리드모리</span></h2></div>
+      <p class="copy" data-i18n="readmoriCopy">책 속 문장과 내 생각을 함께.</p>
+      <div class="downloads"><a class="install" data-app="readmori" data-store="android" href="https://play.google.com/store/apps/details?id=com.readmori.readmori" aria-label="Readmori — Google Play">Google Play</a><a class="install" data-app="readmori" data-store="ios" href="https://apps.apple.com/kr/app/id6821009705" aria-label="Readmori — App Store">App Store</a></div>
     </article>
   </section>
-  <nav aria-label="도움말">
-    <a id="guides-link" href="guides/" data-i18n="guides">앱 사용 안내 ↗</a>
-    <a href="mailto:quicktimeout.support@gmail.com" data-i18n="support">문의하기 ↗</a>
-  </nav>
-  <footer>
-    <p data-i18n="free">무료 다운로드 · 앱 내 광고 포함</p>
-    <details>
-      <summary data-i18n="privacy">개인정보처리방침</summary>
-      <div class="privacy-links">
+  <footer><p data-i18n="free">무료 · 앱 내 광고 포함</p><div class="footer-links"><a href="mailto:quicktimeout.support@gmail.com" data-i18n="support">문의</a><details><summary data-i18n="privacy">개인정보처리방침</summary><div class="privacy-links">
         <a href="https://quicktimeoutsupport-cmd.github.io/app-break-privacy/privacy-policy.html">App Break</a>
         <a href="https://quicktimeoutsupport-cmd.github.io/linknow-privacy/privacy-policy.html">Link Now</a>
         <a href="https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/privacy-policy.html">Quick Timeout</a>
-        <a href="https://quicktimeoutsupport-cmd.github.io/eat-run-privacy/privacy-policy.html" data-i18n="erName">먹빼 / EAT.RUN.</a>
-        <a href="https://quicktimeoutsupport-cmd.github.io/lumo-tilt-privacy/privacy.html" data-i18n="ltName">루모 틸트 / LumoTilt</a>
-      </div>
-    </details>
-  </footer>
+        <a href="https://quicktimeoutsupport-cmd.github.io/eat-run-privacy/privacy-policy.html" data-i18n="eat_runName">먹빼 / EAT.RUN.</a>
+        <a href="https://quicktimeoutsupport-cmd.github.io/lumo-tilt-privacy/privacy.html" data-i18n="lumo_tiltName">루모 틸트 / LumoTilt</a>
+
+        <a href="https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/readmori/privacy-policy.html" data-i18n="readmoriName">리드모리</a>
+</div></details></div></footer>
 </main>
 <script src="campaign-links.js?v=20261024"></script>
 <script>
 const translations = {
- ko: { findApp:'영상에서 본 앱을 바로 찾아보세요.', ltDownload:'App Store에서 무료 다운로드', ltName:'루모 틸트 / LumoTilt', lt:'살짝 기울여, 빛나는 구슬을 골인 링까지! 전기 벽을 피하고 보석을 모으며 1,000단계에 도전하세요.', ltStatus:'iPhone·iPad에서 지금 다운로드 · 12+', ltMeaning:'빛을 떠올리는 Lumo + 기울인다는 뜻의 Tilt. 친구와 번갈아 도전해 보세요.', metaDescription:'Bonney Apps의 공식 다운로드. App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트를 한곳에서 만나보세요.', guide:'사용 방법', androidGuide:'Android 사용 방법', iosGuide:'iPhone·iPad 사용 방법', intro:'일상을 조금 더 편리하게.', ab:'앱 사용 시간을 확인하고, 잠시 쉬어 가세요.', ln:'자주 쓰는 블루투스 오디오를 한곳에.', qt:'필요한 시간만큼 화면을 켜 두세요.', erName:'먹빼 / EAT.RUN.', er:'먹은 음식의 하루 기준 초과분을 예상 러닝 거리로. 러닝 전, 가볍게 확인하세요.', erAndroidStatus:'Google Play', erStatus:'Android·iPhone·iPad에서 지금 다운로드할 수 있어요.', guides:'앱 사용 안내 ↗', support:'문의하기 ↗', free:'무료 다운로드 · 앱 내 광고 포함', privacy:'개인정보처리방침' },
- en: { findApp:'Find the app you saw in our videos.', ltDownload:'Download free on the App Store', ltName:'LumoTilt', lt:'Tilt your phone. Roll the glowing ball into the goal! Dodge electric walls, collect gems and take on 1,000 levels.', ltStatus:'Available now for iPhone and iPad · 12+', ltMeaning:'Lumo evokes light; Tilt is how you play. Pass the phone and take turns with friends.', metaDescription:'Official downloads for App Break, Link Now, Quick Timeout, EAT.RUN. and LumoTilt by Bonney Apps.', guide:'How to use', androidGuide:'Android guide', iosGuide:'iPhone/iPad guide', intro:'Small apps. A little help, every day.', ab:'Screen time, with room for a break.', ln:'Your Bluetooth audio, in one place.', qt:'Keep your screen awake on a timer.', erName:'EAT.RUN.', er:'Before your run, see calories above your daily baseline as estimated running kilometres.', erAndroidStatus:'Google Play', erStatus:'Available now for Android, iPhone and iPad.', guides:'App guides ↗', support:'Get in touch ↗', free:'Free to download · Contains ads', privacy:'Privacy policies' }
+ "ko": {
+  "free": "무료 · 앱 내 광고 포함",
+  "support": "문의",
+  "privacy": "개인정보처리방침",
+  "app_breakName": "App Break",
+  "app_breakCopy": "앱 사용을 잠시 쉬어 가세요.",
+  "link_nowName": "Link Now",
+  "link_nowCopy": "블루투스 오디오를 한곳에.",
+  "quick_timeoutName": "Quick Timeout",
+  "quick_timeoutCopy": "필요한 시간만 화면 켜 두기.",
+  "eat_runName": "먹빼",
+  "eat_runCopy": "뛰기 전, 예상 러닝 거리.",
+  "lumo_tiltName": "루모 틸트",
+  "lumo_tiltCopy": "기울여 즐기는 빛나는 구슬 미로.",
+  "readmoriName": "리드모리",
+  "readmoriCopy": "책 속 문장과 내 생각을 함께."
+ },
+ "en": {
+  "free": "Free · Contains ads",
+  "support": "Contact",
+  "privacy": "Privacy",
+  "app_breakName": "App Break",
+  "app_breakCopy": "Take a break from your apps.",
+  "link_nowName": "Link Now",
+  "link_nowCopy": "Your Bluetooth audio, together.",
+  "quick_timeoutName": "Quick Timeout",
+  "quick_timeoutCopy": "Keep your screen on a timer.",
+  "eat_runName": "EAT.RUN.",
+  "eat_runCopy": "Food to estimated running km.",
+  "lumo_tiltName": "LumoTilt",
+  "lumo_tiltCopy": "Tilt through a glowing maze.",
+  "readmoriName": "Readmori",
+  "readmoriCopy": "Book quotes and your thoughts."
+ }
 };
 const entryQuery = new URLSearchParams(location.search);
 const entryLanguage = entryQuery.get('campaign') === 'growth_20261021'
@@ -151,21 +132,19 @@ const entryLanguage = entryQuery.get('campaign') === 'growth_20261021'
  : entryQuery.get('campaign') === 'install_20261024'
  ? /^(qt|ab|ln|er|lt)_(android|ios)_(ko|en)_[a-z0-9]{1,7}$/.exec(entryQuery.get('content') || '')?.[3]
  : null;
-let english = entryLanguage ? entryLanguage === 'en' : !navigator.language.toLowerCase().startsWith('ko');
+let english = entryLanguage ? entryLanguage === 'en' : ['ko','en'].includes(entryQuery.get('lang')) ? entryQuery.get('lang') === 'en' : !navigator.language.toLowerCase().startsWith('ko');
 function language() {
  const lang = english ? 'en' : 'ko';
  document.documentElement.lang = lang;
  document.title = english ? 'Bonney Apps · Download' : 'Bonney Apps · 다운로드';
- document.querySelector('meta[name="description"]').content = translations[lang].metaDescription;
- document.querySelector('meta[property="og:description"]').content = translations[lang].metaDescription;
+ const description = english ? 'Official downloads for App Break, Link Now, Quick Timeout, EAT.RUN., LumoTilt and Readmori.' : 'App Break, Link Now, Quick Timeout, 먹빼, 루모 틸트, 리드모리의 공식 다운로드.';
+ document.querySelector('meta[name="description"]').content = description;
+ document.querySelector('meta[property="og:description"]').content = description;
  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = translations[lang][el.dataset.i18n]; });
- document.querySelector('.install[data-app="eat_run"][data-store="android"]').setAttribute('aria-label', 'EAT.RUN. — Google Play');
  const toggle = document.getElementById('language');
  toggle.textContent = english ? '한국어' : 'English';
  toggle.setAttribute('aria-label',english ? '한국어로 전환' : 'Switch to English');
  document.querySelector('.apps').setAttribute('aria-label',english ? 'App downloads' : '앱 다운로드');
- document.querySelector('nav').setAttribute('aria-label',english ? 'Help' : '도움말');
- document.querySelectorAll('[data-guide]').forEach(a=>{ const q=new URLSearchParams(location.search); for(const key of [...q.keys()]) if(!['source','content','campaign','medium'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(q.get(key))) q.delete(key); a.href='guides/'+a.dataset.guide+'-'+lang+'.html'+(q.size?'?'+q.toString():''); });
  document.getElementById('eat-icon').src = english ? 'icons/eat-run-en.png' : 'icons/eat-run-ko.png';
  document.querySelectorAll('.install[data-store="ios"]').forEach(a => {
   const url = new URL(a.href);
@@ -174,11 +153,6 @@ function language() {
 }
 document.getElementById('language').addEventListener('click',()=>{ english=!english; language(); });
 language();
-const guideQuery = new URLSearchParams(location.search);
-for (const key of [...guideQuery.keys()]) {
- if (!['source','content','campaign','medium'].includes(key) || !/^[a-z0-9_]{1,64}$/.test(guideQuery.get(key))) guideQuery.delete(key);
-}
-document.getElementById('guides-link').href = 'guides/' + (guideQuery.size ? '?' + guideQuery.toString() : '');
 </script>
 </body>
 </html>
