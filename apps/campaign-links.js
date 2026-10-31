@@ -17,10 +17,10 @@
   // not rewrite its attribution. "bi" means a bilingual profile, not a guess.
   if (params.get('campaign') === 'install_20261024') {
     const sources = {youtube:'yt', instagram:'ig', tiktok:'tt', disquiet:'dq', sidedock:'sd', producthunt:'ph', reddit:'rd'};
-    const apps = {quick_timeout:'qt', app_break:'ab', link_now:'ln', eat_run:'er', lumo_tilt:'lt'};
-    const creatives = new Set(['profile','intro','qtrcp','qtdiy','errun','lttilt','abbed','lncar','lndesk']);
+    const apps = {quick_timeout:'qt', app_break:'ab', link_now:'ln', eat_run:'er', lumo_tilt:'lt', readmori:'rm'};
+    const creatives = new Set(['profile','intro','qtrcp','qtdiy','errun','lttilt','abbed','lncar','lndesk','rmquote']);
     const source = params.get('source');
-    const match = /^(qt|ab|ln|er|lt|all)_(android|ios|any)_(ko|en|bi)_([a-z0-9]{1,7})$/.exec(params.get('content') || '');
+    const match = /^(qt|ab|ln|er|lt|rm|all)_(android|ios|any)_(ko|en|bi)_([a-z0-9]{1,7})$/.exec(params.get('content') || '');
     if (!Object.hasOwn(sources, source) || !match || !creatives.has(match[4])) return;
     const [, originApp, originPlatform, lang, creative] = match;
     if ((originApp === 'all') !== (originPlatform === 'any') ||
@@ -53,9 +53,9 @@
   // historical query below unchanged, including the old shared growth cohort.
   if (params.get('campaign') === 'growth_20261021') {
     const sources = {youtube:'yt', instagram:'ig', tiktok:'tt', disquiet:'dq', sidedock:'sd', producthunt:'ph', reddit:'rd'};
-    const apps = {quick_timeout:'qt', app_break:'ab', link_now:'ln', eat_run:'er', lumo_tilt:'lt'};
+    const apps = {quick_timeout:'qt', app_break:'ab', link_now:'ln', eat_run:'er', lumo_tilt:'lt', readmori:'rm'};
     const source = params.get('source');
-    const match = /^(qt|ab|ln|er|lt)_(android|ios)_(ko|en)$/.exec(params.get('content') || '');
+    const match = /^(qt|ab|ln|er|lt|rm)_(android|ios)_(ko|en)$/.exec(params.get('content') || '');
     if (!Object.hasOwn(sources, source) || !match) return;
     const lang = match[3];
     document.querySelectorAll('.install[data-app][data-store]').forEach(link => {

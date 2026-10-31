@@ -6,6 +6,8 @@ const base = {
   qt: {dataset:{app:'quick_timeout',store:'ios'},href:'https://apps.apple.com/kr/app/id6809292356'},
   ab: {dataset:{app:'app_break',store:'android'},href:'https://play.google.com/store/apps/details?id=com.developerbonney.pause'},
   er: {dataset:{app:'eat_run',store:'ios'},href:'https://apps.apple.com/kr/app/id6813880654'},
+  rmIos: {dataset:{app:'readmori',store:'ios'},href:'https://apps.apple.com/kr/app/id6821009705'},
+  rmAndroid: {dataset:{app:'readmori',store:'android'},href:'https://play.google.com/store/apps/details?id=com.readmori.readmori'},
   hostile: {dataset:{app:'eat_run',store:'ios'},href:'https://example.org/keep'}
 };
 function run(query) {
@@ -81,3 +83,31 @@ for(const source of ['youtube','instagram']) {
  assert.notEqual(new URL(r.qt.href).searchParams.get('ct'),new URL(r.er.href).searchParams.get('ct'));
 }
 console.log('PASS: verified bonney-yt / bonney-ig bare profile destinations are covered');
+
+// Regression: profile visitors could install Readmori, but lost their source.
+for(const source of ['youtube','instagram','tiktok','disquiet','sidedock','producthunt','reddit']) {
+ for(const query of [
+  `?source=${source}&medium=profile`,
+  `?source=${source}&campaign=install_20261024&content=rm_ios_ko_rmquote`,
+  `?source=${source}&campaign=install_20261024&content=rm_android_en_rmquote`,
+  `?source=${source}&campaign=growth_20261021&content=rm_ios_ko`
+ ]) {
+  const r=run(query), ios=new URL(r.rmIos.href), android=new URL(r.rmAndroid.href);
+  assert.equal(ios.pathname,'/kr/app/id6821009705');
+  assert.equal(ios.searchParams.get('pt'),'129336484');
+  assert.ok(ios.searchParams.get('ct').length<=30);
+  assert.equal(android.searchParams.get('id'),'com.readmori.readmori');
+  assert.equal(android.searchParams.get('utm_source'),source);
+  const ref=new URLSearchParams(android.searchParams.get('referrer'));
+  assert.equal(ref.get('utm_campaign'),android.searchParams.get('utm_campaign'));
+  assert.notEqual(ios.searchParams.get('ct'),android.searchParams.get('utm_campaign'));
+  assert.equal(r.hostile.href,base.hostile.href);
+ }
+}
+for(const source of ['youtube','instagram']) {
+ const r=run(`?source=${source}`);
+ assert.ok(new URL(r.rmIos.href).searchParams.get('ct'));
+ assert.ok(new URL(r.rmAndroid.href).searchParams.get('referrer'));
+}
+for(const key of ['rmIos','rmAndroid']) assert.equal(run('')[key].href,base[key].href);
+console.log('PASS: Readmori profile and creative attribution preserves exact stores and platform separation');
