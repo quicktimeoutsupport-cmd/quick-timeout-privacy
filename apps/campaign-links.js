@@ -10,7 +10,7 @@
       app_break:{code:'ab', android:'com.developerbonney.pause'},
       link_now:{code:'ln', android:'com.developerbonney.linknow'},
       eat_run:{code:'er', android:'com.developerbonney.eatrun', ios:'6813880654'},
-      lumo_tilt:{code:'lt', ios:'6823873526'},
+      lumo_tilt:{code:'lt', android:'com.lumotilt.prototype', ios:'6823873526'},
       readmori:{code:'rm', android:'com.readmori.readmori', ios:'6821009705'}
     };
     const creatives = new Set(['intro','qtrcp','qtdiy','errun','lttilt','abbed','lncar','lndesk','rmquote']);

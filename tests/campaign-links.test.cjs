@@ -117,8 +117,8 @@ console.log('PASS: Readmori profile and creative attribution preserves exact sto
 const hubHtml=fs.readFileSync(new URL('../apps/index.html',`file://${__filename}`),'utf8');
 const publicLinks=[...hubHtml.matchAll(/<a class="install" data-app="([^"]+)" data-store="([^"]+)" href="([^"]+)"/g)]
  .map(([,app,store,href])=>({dataset:{app,store},href}));
-assert.equal(publicLinks.length,9);
-assert.ok(!publicLinks.some(x=>x.dataset.app==='lumo_tilt' && x.dataset.store==='android'));
+assert.equal(publicLinks.length,10);
+assert.ok(publicLinks.some(x=>x.dataset.app==='lumo_tilt' && x.dataset.store==='android' && new URL(x.href).searchParams.get('id')==='com.lumotilt.prototype'));
 assert.ok(!publicLinks.some(x=>x.dataset.app==='app_break' && x.dataset.store==='ios'));
 const rejectedLinks=[
  {dataset:{app:'readmori',store:'ios'},href:'https://example.org/app/id6821009705'},
@@ -137,7 +137,7 @@ function runChannel(query) {
 const channelTokens=new Set();
 for(const source of ['threads','x','pinterest']) {
  for(const lang of ['ko','en']) {
-  for(const origin of ['qt_android','qt_ios','qt_both','ab_android','ln_android','er_android','er_ios','er_both','lt_ios','rm_android','rm_ios','rm_both']) {
+  for(const origin of ['qt_android','qt_ios','qt_both','ab_android','ln_android','er_android','er_ios','er_both','lt_ios','lt_android','lt_both','rm_android','rm_ios','rm_both']) {
    const content=`${origin}_${lang}_rmquote`;
    const links=runChannel(`?source=${source}&campaign=channel_20261103&content=${content}`);
    assert.equal(links.length,channelBase.length);
@@ -166,11 +166,11 @@ for(const source of ['threads','x','pinterest']) {
   }
  }
 }
-for(const content of ['lt_android_ko_intro','ab_ios_en_intro','ab_both_ko_intro','ln_both_en_intro','rm_any_ko_intro','rm_both_bi_intro','rm_both_ko_unknown','../bad']) {
+for(const content of ['ab_ios_en_intro','ab_both_ko_intro','ln_both_en_intro','rm_any_ko_intro','rm_both_bi_intro','rm_both_ko_unknown','../bad']) {
  assert.deepEqual(runChannel(`?source=threads&campaign=channel_20261103&content=${content}`),channelBase);
 }
 assert.deepEqual(runChannel('?source=unknown&campaign=channel_20261103&content=rm_both_ko_rmquote'),channelBase);
-console.log(`PASS: channel_20261103 has ${channelTokens.size} distinct source/origin/destination/language tokens; 9 current stores preserved; invalid destinations and unreleased platforms unchanged`);
+console.log(`PASS: channel_20261103 has ${channelTokens.size} distinct source/origin/destination/language tokens; 10 current stores preserved; invalid destinations and unreleased platforms unchanged`);
 
 for(const lang of ['ko','en']) {
  const html=fs.readFileSync(new URL(`../apps/guides/readmori-${lang}.html`,`file://${__filename}`),'utf8');
