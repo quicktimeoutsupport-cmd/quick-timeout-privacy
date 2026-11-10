@@ -3,6 +3,46 @@
   const params = new URLSearchParams(location.search);
   // Explicit new-channel cohort. Only tag existing, verified store destinations;
   // this does not create links for an unreleased platform or collect visitors.
+  if (params.get('campaign') === 'focus_20261110') {
+    const sources = {youtube:'yt',instagram:'ig',tiktok:'tt',threads:'th',x:'x',pinterest:'pn',disquiet:'dq',reddit:'rd'};
+    const apps = {
+      quick_timeout:{code:'qt', android:'com.developerbonney.quicktimeout', ios:'6809292356'},
+      app_break:{code:'ab', android:'com.developerbonney.pause'},
+      link_now:{code:'ln', android:'com.developerbonney.linknow'},
+      eat_run:{code:'er', android:'com.developerbonney.eatrun', ios:'6813880654'},
+      lumo_tilt:{code:'lt', android:'com.lumotilt.prototype', ios:'6823873526'},
+      readmori:{code:'rm', android:'com.readmori.readmori', ios:'6821009705'}
+    };
+    const creatives = new Set(['intro','qtrcp','qtdiy','errun','lttilt','abbed','lncar','lndesk','rmquote']);
+    const source = params.get('source');
+    const match = /^(qt|ab|ln|er|lt|rm)_(android|ios|both)_(ko|en)_([a-z0-9]{1,7})$/.exec(params.get('content') || '');
+    if (!Object.hasOwn(sources, source) || !match || !creatives.has(match[4])) return;
+    const [, originApp, originPlatform, lang, creative] = match;
+    const origin = Object.values(apps).find(app => app.code === originApp);
+    if (originPlatform === 'both' ? !(origin.android && origin.ios) : !origin[originPlatform]) return;
+    document.querySelectorAll('.install[data-app][data-store]').forEach(link => {
+      const app = apps[link.dataset.app], platform = link.dataset.store;
+      if (!app || !['android','ios'].includes(platform) || !app[platform]) return;
+      const target = new URL(link.href);
+      if (target.protocol !== 'https:') return;
+      if (platform === 'ios' && (target.hostname !== 'apps.apple.com' ||
+          !new RegExp(`^/((kr|us)/)?app/(apple-store/)?id${app.ios}$`).test(target.pathname))) return;
+      if (platform === 'android' && (target.hostname !== 'play.google.com' ||
+          target.pathname !== '/store/apps/details' || target.searchParams.get('id') !== app.android)) return;
+      const campaign = `${sources[source]}_${app.code}${platform[0]}_${lang}_${originApp}${originPlatform[0]}${creative}_261110`;
+      if (platform === 'ios') {
+        target.searchParams.set('pt','129336484');
+        target.searchParams.set('ct',campaign);
+        target.searchParams.set('mt','8');
+      } else {
+        const tags = {utm_source:source, utm_medium:'organic_social', utm_campaign:campaign, utm_content:match[0]};
+        for (const [key,value] of Object.entries(tags)) target.searchParams.set(key,value);
+        target.searchParams.set('referrer',new URLSearchParams(tags).toString());
+      }
+      link.href = target.href;
+    });
+    return;
+  }
   if (params.get('campaign') === 'channel_20261103') {
     const sources = {threads:'th', x:'x', pinterest:'pn'};
     const apps = {
