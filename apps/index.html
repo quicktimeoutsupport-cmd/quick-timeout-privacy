@@ -144,11 +144,12 @@ const entryQuery = new URLSearchParams(location.search);
 const entryLanguage = ['channel_20261103','focus_20261110'].includes(entryQuery.get('campaign'))
  ? /^(qt|ab|ln|er|lt|rm)_(android|ios|both)_(ko|en)_[a-z0-9]{1,7}$/.exec(entryQuery.get('content') || '')?.[3]
  : entryQuery.get('campaign') === 'growth_20261021'
- ? /^(qt|ab|ln|er|lt)_(android|ios)_(ko|en)$/.exec(entryQuery.get('content') || '')?.[3]
+ ? /^(qt|ab|ln|er|lt|rm)_(android|ios)_(ko|en)$/.exec(entryQuery.get('content') || '')?.[3]
  : entryQuery.get('campaign') === 'install_20261024'
- ? /^(qt|ab|ln|er|lt)_(android|ios)_(ko|en)_[a-z0-9]{1,7}$/.exec(entryQuery.get('content') || '')?.[3]
+ ? /^(qt|ab|ln|er|lt|rm)_(android|ios)_(ko|en)_[a-z0-9]{1,7}$/.exec(entryQuery.get('content') || '')?.[3]
  : null;
-let english = entryQuery.get('campaign') === 'focus_20261110' && ['ko','en'].includes(entryQuery.get('lang')) ? entryQuery.get('lang') === 'en' : entryLanguage ? entryLanguage === 'en' : ['ko','en'].includes(entryQuery.get('lang')) ? entryQuery.get('lang') === 'en' : !navigator.language.toLowerCase().startsWith('ko');
+// Explicit display language wins; campaign content retains the original creative language.
+let english = ['ko','en'].includes(entryQuery.get('lang')) ? entryQuery.get('lang') === 'en' : entryLanguage ? entryLanguage === 'en' : !navigator.language.toLowerCase().startsWith('ko');
 function language() {
  const lang = english ? 'en' : 'ko';
  document.documentElement.lang = lang;
@@ -167,7 +168,12 @@ function language() {
   if (url.hostname === 'apps.apple.com') { url.pathname = url.pathname.replace(/^\/(kr|us)\/app\//, english ? '/us/app/' : '/kr/app/'); a.href = url.href; }
  });
 }
-document.getElementById('language').addEventListener('click',()=>{ english=!english; language(); });
+document.getElementById('language').addEventListener('click',()=>{
+ english=!english; language();
+ const selected = new URL(location.href);
+ selected.searchParams.set('lang',english ? 'en' : 'ko');
+ history.replaceState(null,'',selected.href);
+});
 language();
 const focusApp = entryQuery.get('app');
 const focusIds = ['app_break','link_now','quick_timeout','eat_run','lumo_tilt','readmori'];
