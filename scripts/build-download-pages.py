@@ -51,3 +51,21 @@ for app in APPS:
    manifest.append(dict(path='apps/download/'+slug,code=app['code'],platform=platform,lang=lang,storeId=storeid,url=canonical))
 (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(f'Rendered {len(manifest)} pages')
+# Keep new crawlable URLs discoverable without changing historical campaign URLs.
+import xml.etree.ElementTree as ET
+ns='http://www.sitemaps.org/schemas/sitemap/0.9'
+ET.register_namespace('',ns)
+for sitemap in [Path('sitemap.xml'),Path('apps/guides/sitemap.xml')]:
+ tree=ET.parse(sitemap); root=tree.getroot()
+ existing={node.find('{'+ns+'}loc').text:node for node in root}
+ for lang in ['ko','en']:
+  guideurl=BASE+f'guides/quick-timeout-android-{lang}.html'
+  if guideurl in existing:
+   node=existing[guideurl]; modified=node.find('{'+ns+'}lastmod')
+   if modified is None: modified=ET.SubElement(node,'{'+ns+'}lastmod')
+   modified.text='2026-11-13'
+ if sitemap==Path('sitemap.xml'):
+  for page in manifest:
+   if page['url'] not in existing:
+    node=ET.SubElement(root,'{'+ns+'}url'); ET.SubElement(node,'{'+ns+'}loc').text=page['url']; ET.SubElement(node,'{'+ns+'}lastmod').text='2026-11-13'
+ ET.indent(tree,space='  ');tree.write(sitemap,encoding='utf-8',xml_declaration=True)

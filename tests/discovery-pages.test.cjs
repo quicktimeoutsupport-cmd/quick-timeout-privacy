@@ -49,3 +49,6 @@ for(const page of manifest) {
  for(const bad of ['https://evil.example/app','http://play.google.com/store/apps/details?id='+page.storeId,'https://play.google.com/store/apps/details?id=wrong','https://apps.apple.com/us/app/id999']) assert.equal(run(page,query,bad).target.href,new URL(bad).href);
 }
 console.log(`PASS: 20 static language/platform pages; ${tokens.size} unique source/creative tokens; destination validation; no-JS links; language-switch attribution; legacy/invalid input excluded`);
+const sitemap=fs.readFileSync('sitemap.xml','utf8');
+for(const page of manifest) assert.equal(sitemap.split(`<loc>${page.url}</loc>`).length-1,1,'New page present exactly once in sitemap');
+console.log('PASS: all new canonical pages in sitemap');
