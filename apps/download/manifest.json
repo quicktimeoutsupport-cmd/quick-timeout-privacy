@@ -1,0 +1,162 @@
+[
+  {
+    "path": "apps/download/quick-timeout-android-ko.html",
+    "code": "qt",
+    "platform": "android",
+    "lang": "ko",
+    "storeId": "com.developerbonney.quicktimeout",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/quick-timeout-android-ko.html"
+  },
+  {
+    "path": "apps/download/quick-timeout-android-en.html",
+    "code": "qt",
+    "platform": "android",
+    "lang": "en",
+    "storeId": "com.developerbonney.quicktimeout",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/quick-timeout-android-en.html"
+  },
+  {
+    "path": "apps/download/quick-timeout-ios-ko.html",
+    "code": "qt",
+    "platform": "ios",
+    "lang": "ko",
+    "storeId": "6809292356",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/quick-timeout-ios-ko.html"
+  },
+  {
+    "path": "apps/download/quick-timeout-ios-en.html",
+    "code": "qt",
+    "platform": "ios",
+    "lang": "en",
+    "storeId": "6809292356",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/quick-timeout-ios-en.html"
+  },
+  {
+    "path": "apps/download/app-break-android-ko.html",
+    "code": "ab",
+    "platform": "android",
+    "lang": "ko",
+    "storeId": "com.developerbonney.pause",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/app-break-android-ko.html"
+  },
+  {
+    "path": "apps/download/app-break-android-en.html",
+    "code": "ab",
+    "platform": "android",
+    "lang": "en",
+    "storeId": "com.developerbonney.pause",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/app-break-android-en.html"
+  },
+  {
+    "path": "apps/download/link-now-android-ko.html",
+    "code": "ln",
+    "platform": "android",
+    "lang": "ko",
+    "storeId": "com.developerbonney.linknow",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/link-now-android-ko.html"
+  },
+  {
+    "path": "apps/download/link-now-android-en.html",
+    "code": "ln",
+    "platform": "android",
+    "lang": "en",
+    "storeId": "com.developerbonney.linknow",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/link-now-android-en.html"
+  },
+  {
+    "path": "apps/download/eat-run-android-ko.html",
+    "code": "er",
+    "platform": "android",
+    "lang": "ko",
+    "storeId": "com.developerbonney.eatrun",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/eat-run-android-ko.html"
+  },
+  {
+    "path": "apps/download/eat-run-android-en.html",
+    "code": "er",
+    "platform": "android",
+    "lang": "en",
+    "storeId": "com.developerbonney.eatrun",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/eat-run-android-en.html"
+  },
+  {
+    "path": "apps/download/eat-run-ios-ko.html",
+    "code": "er",
+    "platform": "ios",
+    "lang": "ko",
+    "storeId": "6813880654",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/eat-run-ios-ko.html"
+  },
+  {
+    "path": "apps/download/eat-run-ios-en.html",
+    "code": "er",
+    "platform": "ios",
+    "lang": "en",
+    "storeId": "6813880654",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/eat-run-ios-en.html"
+  },
+  {
+    "path": "apps/download/lumo-tilt-android-ko.html",
+    "code": "lt",
+    "platform": "android",
+    "lang": "ko",
+    "storeId": "com.lumotilt.prototype",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/lumo-tilt-android-ko.html"
+  },
+  {
+    "path": "apps/download/lumo-tilt-android-en.html",
+    "code": "lt",
+    "platform": "android",
+    "lang": "en",
+    "storeId": "com.lumotilt.prototype",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/lumo-tilt-android-en.html"
+  },
+  {
+    "path": "apps/download/lumo-tilt-ios-ko.html",
+    "code": "lt",
+    "platform": "ios",
+    "lang": "ko",
+    "storeId": "6823873526",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/lumo-tilt-ios-ko.html"
+  },
+  {
+    "path": "apps/download/lumo-tilt-ios-en.html",
+    "code": "lt",
+    "platform": "ios",
+    "lang": "en",
+    "storeId": "6823873526",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/lumo-tilt-ios-en.html"
+  },
+  {
+    "path": "apps/download/readmori-android-ko.html",
+    "code": "rm",
+    "platform": "android",
+    "lang": "ko",
+    "storeId": "com.readmori.readmori",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/readmori-android-ko.html"
+  },
+  {
+    "path": "apps/download/readmori-android-en.html",
+    "code": "rm",
+    "platform": "android",
+    "lang": "en",
+    "storeId": "com.readmori.readmori",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/readmori-android-en.html"
+  },
+  {
+    "path": "apps/download/readmori-ios-ko.html",
+    "code": "rm",
+    "platform": "ios",
+    "lang": "ko",
+    "storeId": "6821009705",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/readmori-ios-ko.html"
+  },
+  {
+    "path": "apps/download/readmori-ios-en.html",
+    "code": "rm",
+    "platform": "ios",
+    "lang": "en",
+    "storeId": "6821009705",
+    "url": "https://quicktimeoutsupport-cmd.github.io/quick-timeout-privacy/apps/download/readmori-ios-en.html"
+  }
+]
